@@ -5,7 +5,7 @@ app.listen(APP_PORT, () => {
   console.log(`server is running at ${APP_PORT}`);
 });
 
-const mysql = require("mysql")
+const mysql = require("mysql2")
 
 const connection = mysql.createConnection({
   host: "120.77.78.73", //远程地址，本地MySQL是localhost
