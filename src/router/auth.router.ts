@@ -1,5 +1,12 @@
-const Router = require('koa-router')
+import Router from "koa-router";
+import authController from "../controller/auth.controller"
+import { verifyLogin } from "../middleware";
 
-const authRouter = new Router()
+const { login } = authController
 
-co
+const authRouter = new Router({ prefix: "/users" });
+
+authRouter.post("/login", verifyLogin, login);
+
+
+export default authRouter

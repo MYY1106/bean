@@ -1,6 +1,6 @@
 import type { Context, Next } from 'koa'
-import errorTypes from "../constants"
-import services from "../services/user.service"
+import errorTypes from "../../constants"
+import services from "../../services/user.service"
 
 const verifyUser = async (ctx: Context, next: Next) => {
     // 1. 获取用户名和密码

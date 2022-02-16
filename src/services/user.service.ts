@@ -1,6 +1,5 @@
 import pool from "../app/database"
 import type { IUser } from "../@types/index"
-import type { ResultSetHeader, FieldPacket } from "mysql2"
 
 class UserService {
     async create(user: IUser) {
@@ -15,7 +14,6 @@ class UserService {
     async getUserByName(username: string) {
         const statement = `SELECT * FROM users WHERE username = ?;`
         const result = await pool.query(statement, [username])
-
         return result[0]
     }
 }

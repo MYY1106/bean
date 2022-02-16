@@ -1,4 +1,5 @@
-import verifyUser from "./verifyUser.middleware";
-import handlePassword from "./handlePassword.middleware";
+import verifyUser from "./register/verifyUser.middleware";
+import handlePassword from "./register/handlePassword.middleware";
+import verifyLogin from "./login/verifyLogin.middleware";
 
-export { verifyUser, handlePassword };
+export { verifyUser, handlePassword, verifyLogin };
