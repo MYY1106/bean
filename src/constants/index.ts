@@ -1,0 +1,3 @@
+import { NAME_OR_PASSWORD_IS_REQUIRED, USER_ALREADY_EXISTS } from './error-types';
+
+export default { NAME_OR_PASSWORD_IS_REQUIRED, USER_ALREADY_EXISTS };

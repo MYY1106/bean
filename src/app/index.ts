@@ -1,16 +1,14 @@
 import Koa from "koa";
-import Router from "koa-router";
+import userRouter from '../router/user.router'
+import bodyParser from "koa-bodyparser";
+import errorHandler from "./error-handle";
 
 const app: Koa = new Koa();
 
-//路径 - 中间件映射
-const userRouter = new Router({ prefix: "/users" });
-
-userRouter.post("/", async (ctx, next) => {
-  ctx.body = "successfully create account";
-});
-
+app.use(bodyParser())
 app.use(userRouter.routes());
 app.use(userRouter.allowedMethods());
+
+app.on('error', errorHandler);
 
 export default app;
