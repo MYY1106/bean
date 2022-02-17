@@ -1,16 +1,14 @@
 import Koa from "koa";
-import userRouter from '../router/user.router'
-import authRouter from '../router/auth.router'
+import { myKoa } from '../@types'
 import bodyParser from "koa-bodyparser";
 import errorHandler from "./error-handle";
+import useRoutes from '../router'
 
-const app: Koa = new Koa();
+const app: myKoa = new Koa();
+app.useRoutes = useRoutes;
 
 app.use(bodyParser())
-app.use(userRouter.routes());
-app.use(userRouter.allowedMethods());
-app.use(authRouter.routes());
-app.use(authRouter.allowedMethods());
+app.useRoutes()
 
 app.on('error', errorHandler);
 

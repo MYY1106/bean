@@ -26,6 +26,7 @@ const verifyLogin = async (ctx: Context, next: Next) => {
         return ctx.app.emit('error', error, ctx)
     }
     // 5. 等待中间件执行完
+    ctx.user = poolUser;
     await next()
 }
 

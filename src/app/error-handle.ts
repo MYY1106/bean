@@ -20,6 +20,10 @@ const errorHandler = (err: Error, ctx: Context) => {
             status = 409
             message = "用户密码错误"
             break;
+        case errorTypes.UNAUTHORIZED:
+            status = 401
+            message = "token验证失败"
+            break;
         default:
             status = 404
             message = "404 Not Found"
