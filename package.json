@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/koa-cors": "^0.0.2",
     "dotenv": "^16.0.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
@@ -20,12 +19,14 @@
     "koa-cors": "^0.0.16",
     "koa-jwt": "^4.0.3",
     "koa-router": "^10.1.1",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "pm2": "^5.2.0"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.8",
     "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.5",
+    "@types/koa-cors": "^0.0.2",
     "@types/koa-router": "^7.4.4",
     "@types/koa2-cors": "^2.0.2",
     "cz-conventional-changelog": "^3.3.0",

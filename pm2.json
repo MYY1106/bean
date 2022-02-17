@@ -1,0 +1,4 @@
+{
+    "name": "node-serve", 
+    "script": "npm run start" 
+}
