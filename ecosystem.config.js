@@ -26,7 +26,7 @@ module.exports = {
 
   deploy: {
     production: {
-      user: 'root',
+      user: 'BackEndProject',
       host: '120.77.78.73',
       ref: 'origin/main',
       repo: 'git@github.com:hypocritical-7u/bean.git',
