@@ -1,12 +1,5 @@
 import fs from 'fs'
 import { myKoa } from '../@types'
-console.log(1);
-console.log(1);
-
-console.log(1);
-
-
-
 
 const useRoutes = function () {
     console.log(this);
