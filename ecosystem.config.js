@@ -1,13 +1,14 @@
 module.exports = {
   apps: [{
     name: 'bean',
-    script: './bin/www',
+    script: './src/index.ts',
     watch: '.',
     autorestart: true,
     watch: true,
     ignore_watch: [ // 不⽤监听的⽂件
       "node_modules",
-      "logs"
+      "logs",
+      ".husky"
     ],
 
     "error_file": "./logs/app-err.log", // 错误⽇志⽂件
