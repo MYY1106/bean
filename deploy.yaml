@@ -15,7 +15,7 @@ deploy:                     # 部署脚本
     ref: origin/main      # 要拉取的git分支
     ssh_options: StrictHostKeyChecking=no # SSH 公钥检查
     repo: https://github.com/hypocritical-7u/bean.git # 远程仓库地址
-    path: /home/BackEndProject/backend-project/            # 拉取到服务器某个目录下
+    path: /home/BackEndProject/backend-project           # 拉取到服务器某个目录下
     pre-deploy: git fetch --all # 部署前执行
     post-deploy: npm install &&  pm2 reload deploy.yaml --env production # 部署后执行
     env:
