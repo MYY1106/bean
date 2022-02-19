@@ -1,6 +1,7 @@
 import mySqlExcute from "../utils/mySqlExcute"
-class UserService {
-    async getHotMovies(type:string) {
+class HotMoviesService {
+    async getHotMovies(type: string) {
+
         const statement = `SELECT JSON_ARRAYAGG(JSON_OBJECT('movieID', movieList.id, 'movieName', movieList.name, 'score', score, 'coverURL' ,coverUrl)) AS json FROM movieList
         JOIN recentMovieList ON recentMovieList.movieID = movieList.id AND type = ?;`
         
@@ -10,4 +11,4 @@ class UserService {
     }
 }
 
-export default new UserService()
+export default new HotMoviesService()

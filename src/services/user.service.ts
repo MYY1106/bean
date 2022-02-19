@@ -7,8 +7,7 @@ class UserService {
         const { username, password } = user
         const statement = `INSERT INTO users (username,password) VALUES (?,?)`
         const result = await pool.execute(statement, [username, password])
-        console.log(result)
-        return result
+        return result[0]
     }
 
     async getUserByName(username: string) {
