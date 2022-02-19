@@ -8,7 +8,7 @@ const verifyAuth = async (ctx: Context, next: Next) => {
     console.log('验证授权中间件')
     try {
         const authrization = ctx.headers.authorization
-        const token = authrization.replace('Bearer ', '')
+        const token = authrization? authrization.replace('Bearer ', ''): ''
         const result = jwt.verify(token, PUBLIC_KEY, {
             algorithms: ['RS256']
         })
