@@ -5,10 +5,10 @@ import hotMoviesController from "../controller/hotMovies.controller";
 const { getHitMoviesList } = hitMoviesController
 const { getHotMoviesList } = hotMoviesController
 
-const userRouter = new Router({ prefix: "/home-movies" });
+const userRouter = new Router({ prefix: "/movie" });
 
-userRouter.get("/hit-movies", getHitMoviesList);
-userRouter.get('/hot-movies', getHotMoviesList);
+userRouter.get("/hit", getHitMoviesList);
+userRouter.get('/hot', getHotMoviesList);
 
 
 export default userRouter;
