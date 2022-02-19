@@ -2,16 +2,15 @@ import mysql from 'mysql2/promise';
 import type { Pool } from 'mysql2/promise';
 import { MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD } from './config'
 
-let pool: Pool;
-const connectMysql = async () => {
-    pool = mysql.createPool({
+let pool: Pool = mysql.createPool({
         host: MYSQL_HOST,
         port: Number(MYSQL_PORT),
         database: MYSQL_DATABASE,
         user: MYSQL_USER,
         password: MYSQL_PASSWORD
-    })
-
+})
+    
+const connectMysql =  () => {
     pool.getConnection().then(conn =>
         conn.connect()
     ).then(() => {
@@ -19,11 +18,8 @@ const connectMysql = async () => {
     }).catch(err =>
         console.log(err)
     )
-
-
 }
 
 connectMysql()
 
 export default pool;
-
