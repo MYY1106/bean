@@ -5,9 +5,9 @@ import service from '../services/hotMovies.service'
 class HotMoviesController {
     async getHotMoviesList(ctx: Context) {
         const { type } = ctx.query
-        
+
         const data = await service.getHotMovies(type as string)
-        
+
         ctx.body = data
     }
 }
