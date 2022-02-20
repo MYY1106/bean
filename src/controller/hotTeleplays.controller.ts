@@ -1,5 +1,5 @@
 import type { Context, Next } from 'koa'
-import service from '../services/getHotTeleOrAniOrDoc.service'
+import service from '../services/hotTeleOrAniOrDoc.service'
 
 //未写错误处理
 class hotTeleplaysController {
