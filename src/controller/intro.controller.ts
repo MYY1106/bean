@@ -1,7 +1,7 @@
 import service from "../services/intro.service"
 import type { Context } from 'koa'
 
-class UserController {
+class introController {
     async getIntro(ctx: Context) {
         const user = ctx.user
         //查询数据
@@ -20,4 +20,4 @@ class UserController {
     }
 }
 
-export default new UserController()
+export default new introController()

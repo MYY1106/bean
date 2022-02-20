@@ -1,6 +1,6 @@
 import type { Context, Next } from 'koa'
 import jwt from 'jsonwebtoken'
-import { PRIVATE_KEY, PUBLIC_KEY } from '../app/config'
+import { PRIVATE_KEY } from '../app/config'
 
 
 class authController {

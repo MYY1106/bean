@@ -1,7 +1,7 @@
 import pool from "../app/database"
 
-class hotMovieService {
-    async getHotMovies(type: string) {
+class topMoviesService {
+    async getTopMovies(type: string) {
 
         const statement = `SELECT JSON_ARRAYAGG(JSON_OBJECT('movieID', movieList.id, 'movieName', movieList.name, 'score', score, 'coverURL' ,coverUrl)) AS json FROM movieList
         JOIN recentMovieList ON recentMovieList.movieID = movieList.id AND type = ?;`
@@ -12,4 +12,4 @@ class hotMovieService {
     }
 }
 
-export default new hotMovieService()
+export default new topMoviesService()

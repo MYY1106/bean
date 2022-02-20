@@ -1,7 +1,7 @@
 import pool from "../app/database"
 import type { Context } from "koa";
 
-class UserService {
+class hitMovieService {
     async getHitMovies(ctx: Context) {
         // 1. 获取用户相关信息
         const user = ctx.user
@@ -12,4 +12,4 @@ class UserService {
     }
 }
 
-export default new UserService()
+export default new hitMovieService()
