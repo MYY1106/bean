@@ -1,15 +1,12 @@
-import pool from "../app/database"
-
-class hotMovieService {
+import mySqlExcute from "../utils/mySqlExcute"
+class HotMoviesService {
     async getHotMovies(type: string) {
 
         const statement = `SELECT JSON_ARRAYAGG(JSON_OBJECT('movieID', movieList.id, 'movieName', movieList.name, 'score', score, 'coverURL' ,coverUrl)) AS json FROM movieList
         JOIN recentMovieList ON recentMovieList.movieID = movieList.id AND type = ?;`
-
-        const [rows] = await pool.execute(statement, [type])
-
-        return (rows as any)[0].json
+        const data = await mySqlExcute(statement, [type])
+        return data
     }
 }
 
-export default new hotMovieService()
+export default new HotMoviesService()
