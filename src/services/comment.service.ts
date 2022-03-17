@@ -5,7 +5,8 @@ class commentService {
     async getComment(username: string) {
         const statement = `SELECT * FROM comments WHERE username = ?;`
         const [rows]: any = await pool.query(statement, [username])
-        return (rows as any)[0]
+        console.log(rows)
+        return (rows as any)
     }
     async addComment(username: string, body: IComments) {
         const { filmName, content, stars } = body
